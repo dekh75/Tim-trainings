@@ -376,7 +376,7 @@ for(const k of ["hintBtn","prevLine","nextLine"]){const handler=id(k).onclick;id
 id("homeBtn").onclick=home;id("showBtn").onclick=reveal;
 window.addEventListener("popstate",e=>restore(e.state));
 id("taskIntro").hidden=true;
-if(history.state&&history.state.trainer)restore(history.state);else remember(false);
+remember(false);
 })();
 
 </script></body></html>
