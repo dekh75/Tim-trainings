@@ -22,7 +22,7 @@
 .glossary .glossary-words{padding:0 12px 12px;display:grid;gap:7px}
 .glossary p{margin:0;color:#52615a;font-size:12px;line-height:1.45}
 .glossary b{color:#1b3a2b}
-</style></head>
+</style><style>.task-intro{margin:14px 0;border:2px solid #c0dacc;background:linear-gradient(120deg,#f1fbf3,#f5f1ff)}.task-intro h3{margin:0 0 8px;font-size:21px}.task-intro p{margin:8px 0;font-size:14px}.task-intro #introGoal{font-weight:750;color:#205d44}.mode-explainer{color:#52615a;font-size:14px;max-width:850px}[hidden]{display:none!important}#replayCaption{color:#315b44;font-weight:700}</style></head>
 <body><div class="wrap">
 <header><div class="brand"><span class="logo">♞</span><span style="letter-spacing:0;text-transform:none;font-size:14px;line-height:1.25;max-width:250px">Тим. Личный тренажер гамбитов</span></div><span class="badge hide-mobile">Играй даже без интернета</span></header>
 <main>
@@ -39,12 +39,16 @@
 <button type="button" class="card selectable" data-open="caroblack" aria-label="Открыть тренажёр: Каро — Канн за чёрных"><span class="tag">Чёрными · против 1.e4</span><h2>Каро–Канн за чёрных</h2><p>Выстрой крепкий центр, выведи фигуры и спрячь короля рокировкой.</p><span class="seq">1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bf5</span><span class="card-cta">Открыть упражнения <span aria-hidden="true">→</span></span></button>
 </div>
 <div class="topline"><h2>Во что сыграем?</h2><span class="badge" id="stats">Пока нет результатов</span></div>
-<div class="actions"><button class="btn" data-mode="diagnostic">Проверь уровень · 3 задания</button><button class="btn secondary" data-mode="study">Учиться ход за ходом</button><button class="btn secondary" data-mode="practice">Проверить себя</button><button class="btn secondary" data-mode="defense">Угадай ответ соперника</button><button class="btn secondary" data-mode="match">Мини-матч · 5 заданий</button><button class="btn ghost" data-mode="review">Повтори сложные места</button></div>
+<p class="mode-explainer">Карточки выше — выбор шахматной темы. Кнопки ниже — способы тренировки на той же базе заданий. «Учимся» ведёт от простого к сложному; «Проверь себя» и «Угадай ответ» меняют порядок при каждом открытии страницы; мини-матч даёт 5 случайных заданий. «Повтор» показывает места, где ты ошибался.</p><div class="actions"><button class="btn" data-mode="diagnostic">Проверь уровень · 3 задания</button><button class="btn secondary" data-mode="study">Учиться ход за ходом</button><button class="btn secondary" data-mode="practice">Проверить себя</button><button class="btn secondary" data-mode="defense">Угадай ответ соперника</button><button class="btn secondary" data-mode="match">Мини-матч · 5 заданий</button><button class="btn ghost" data-mode="review">Повтори сложные места</button></div>
 <p class="footnote"><b>Важно знать:</b> Не каждый раздел — гамбит. Сицилианская защита и Каро–Канн — способы играть чёрными против 1.e4. В Смит–Морра ты учишься играть белыми, а в отдельной теме — защищаться от этого гамбита. Fantasy — острый вариант с гамбитом Мароци. Лондонская задача показывает ловушку с пешкой b2.</p>
 </section>
 <section id="trainer" class="trainer">
 <div class="topline"><div><div class="eyebrow" id="modeLabel">Тренировка</div><h2 id="counter">Задание</h2></div><div class="row"><span class="badge" id="sessionStats">0 правильных ходов</span><button class="btn secondary small" id="homeBtn">Назад к режимам</button></div></div>
 <div class="toolbar"><label>За кого играем <select id="side"><option value="all">За обе стороны</option><option value="w">Белые</option><option value="b">Чёрные</option></select></label><label>Дебют <select id="opening"><option value="all">Все</option><option value="evans">Эванса</option><option value="morra">Смит–Морра</option><option value="benko">Бенко</option><option value="vienna">Вены</option><option value="london">Лондон</option><option value="caro">Каро–Канн</option><option value="sicilian">Сицилианская защита</option><option value="caroblack">Каро–Канн за чёрных</option></select></label><span class="badge" id="clock">Без таймера</span></div>
+<section class="panel task-intro" id="taskIntro" aria-label="Разберёмся в позиции">
+<h3>Тим, что здесь происходит?</h3><p>Это кусочек учебной партии. Первые ходы уже сделаны, чтобы сразу потренировать нужную идею. Тебе не нужно угадывать, как фигуры сюда попали: начало можно посмотреть на доске.</p>
+<p id="introStory"></p><p id="introGoal"></p><p id="introHow">Нажми на свою фигуру, затем на клетку, куда хочешь пойти. Соперник ответит сам. Твоя задача — пройти учебную линию и понять её план. Другой допустимый ход не всегда плох: здесь мы изучаем конкретный вариант.</p>
+<div class="row"><button type="button" class="btn secondary small" id="replayStart">Как мы пришли к этой позиции?</button><span id="replayControls" hidden><button type="button" class="btn secondary small" id="replayPrev">← Предыдущий ход</button> <button type="button" class="btn secondary small" id="replayNext">Следующий ход →</button> <button type="button" class="btn small" id="replayDone">Понятно, решать задание</button></span></div><p id="replayCaption" aria-live="polite"></p></section>
 <div class="empty-state hidden" id="emptyState" aria-live="polite"></div><div class="workspace" id="workspace"><section class="panel" id="boardPanel"><div class="board-title"><div><h3 id="posTitle"></h3><small id="turn"></small></div><span class="badge" id="gambit"></span></div><div id="board" role="grid" aria-label="Шахматная доска"></div><div class="boardfoot"><span id="posCount"></span><span class="status" id="status">Твой ход!</span></div><div class="progress"><i id="bar"></i></div></section>
 <section class="panel side"><div class="eyebrow" id="label">Тренировочный ход</div><h3 id="title"></h3><div id="prompt" class="prompt"></div><div id="idea" class="idea"></div><section class="opening-guide" id="openingGuide" aria-live="polite"><div class="guide-head"><span class="guide-mark" aria-hidden="true">✦</span><span id="guideLabel"></span></div><div class="guide-grid"><div class="guide-part"><b>Зачем нужен этот ход?</b><p id="guideWhy"></p></div><div class="guide-part"><b>Что часто играют дальше?</b><p id="guidePlan"></p></div></div></section><details class="glossary"><summary>Шахматный словарик</summary><div class="glossary-words">
 <p><b>Дебют</b> — начало шахматной партии.</p>
@@ -260,4 +264,119 @@ function finish(){stopClock();if(mode==="diagnostic"){$("modalTitle").textConten
 function init(){stats();let errors=checkData();if(errors.length){console.error(errors);document.body.insertAdjacentHTML("afterbegin","<div style='background:#9b3029;color:white;padding:12px'>Ой, в одном задании неверный ход: "+errors.join(" · ")+"</div>")}document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>start(b.dataset.mode));document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>{$("opening").value=b.dataset.open;$("side").value="all";start("study")});$("homeBtn").onclick=home;$("hintBtn").onclick=()=>{let st=sequenceStep();$("hint").textContent="Подсказка: "+(st&&st.hint?st.hint:task[8].split(".")[0]+".");$("hint").classList.remove("hidden")};$("showBtn").onclick=reveal;$("nextBtn").onclick=advance;$("prevLine").onclick=()=>{if(lineAt>0){lineAt--;pos=cp(line[lineAt]);$("lineStep").textContent=(lineAt+1)+" / "+line.length;$("prevLine").disabled=lineAt===0;$("nextLine").disabled=false;updateLineRecap(lineAt===line.length-1);draw()}};$("nextLine").onclick=()=>{if(lineAt<line.length-1){lineAt++;pos=cp(line[lineAt]);$("lineStep").textContent=(lineAt+1)+" / "+line.length;$("nextLine").disabled=lineAt===line.length-1;$("prevLine").disabled=false;updateLineRecap(lineAt===line.length-1);draw()}};$("side").onchange=()=>{if(mode!=="diagnostic"){idx=0;makeQueue();showTask()}};$("opening").onchange=()=>{if(mode!=="diagnostic"){idx=0;makeQueue();showTask()}};$("modalContinue").onclick=()=>{$("modal").classList.remove("open");start("practice")};$("modalClose").onclick=()=>$("modal").classList.remove("open");$("modal").onclick=e=>{if(e.target===$("modal"))$("modal").classList.remove("open")}}
 init();
 const showTaskBeforeGuide=showTask;showTask=function(){showTaskBeforeGuide();if(task)fillOpeningGuide(task)};
+
+(function(){
+const STORIES={
+evans:"В начале белые вывели коня и слона, а потом предложили пешку b4. Так начинается гамбит Эванса: белые хотят отвлечь чёрного слона и быстрее занять центр.",
+morra:"Белые начали ходом пешки e2–e4, а чёрные ответили c7–c5. Белые предложили пешку, чтобы открыть пути фигурам. Это идея гамбита Смит–Морра.",
+benko:"Белые заняли место пешками d4 и c4. Чёрные давят на этот центр и предлагают пешку на краю доски. В гамбите Бенко чёрные хотят открыть пути своим ладьям.",
+vienna:"Белые начали с пешки e4 и коня c3, затем пошли пешкой f4. В Венском гамбите белые хотят напасть на центр чёрных и получить активную игру.",
+london:"Белые начали с d4 и вывели слона на f4. Чёрный ферзь может напасть на пешку b2. Здесь учимся замечать угрозу и решать, когда пешку можно отдать ради своей атаки.",
+caro:"Чёрные отвечают на e4 ходом c6 и готовят d5. Белые строят центр и поддерживают его пешкой f3. Здесь учимся играть активно, но помнить о безопасности короля.",
+sicilian:"Белые начали пешкой e2–e4. Чёрные ответили c7–c5: так начинается Сицилианская защита. Дальше стороны спорят за центр. Здесь ты учишься находить ответы за чёрных.",
+caroblack:"Белые начали пешкой e2–e4. Чёрные готовят ответ c6 и d5 — это защита Каро–Канн. План чёрных: бороться за центр, вывести фигуры и укрыть короля."
+};
+let replay=null,replayAt=0,replaySaved=null,navigating=false,navDepth=0;
+const id=x=>document.getElementById(x);
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const ranks=new Map(shuffle(T).map((t,i)=>[t[0],i]));
+const themeRanks=new Map(shuffle(Object.keys(STORIES)).map((g,i)=>[g,i]));
+const originalQueue=makeQueue;
+makeQueue=function(){
+ originalQueue();
+ if(mode==="diagnostic"){
+  const easy=shuffle(T.filter(t=>Number(t[t.length-1])===1)),seen=new Set();
+  queue=easy.filter(t=>{if(seen.has(t[1]))return false;seen.add(t[1]);return true}).slice(0,3);
+ }else if(["practice","defense","match"].includes(mode)){
+  queue=queue.slice().sort((a,b)=>ranks.get(a[0])-ranks.get(b[0]));
+ }else if(mode==="study"){
+  queue=queue.slice().sort((a,b)=>(themeRanks.get(a[1])-themeRanks.get(b[1]))||(Number(a[a.length-1])-Number(b[b.length-1]))||T.indexOf(a)-T.indexOf(b));
+ }
+};
+function intro(){
+ id("taskIntro").hidden=!task||id("workspace").classList.contains("hidden");
+ if(!task)return;
+ id("introStory").textContent=STORIES[task[1]];
+ id("introGoal").textContent="Ты играешь "+(task[2]==="w"?"белыми":"чёрными")+". Сейчас твой ход. Задача: "+task[7];
+ id("replayControls").hidden=true;id("replayStart").hidden=false;id("replayCaption").textContent="";
+}
+function describeMove(s,u,n){
+ const p=s.b[sq(u.slice(0,2))],to=sq(u.slice(2,4)),names={p:"пешка",n:"конь",b:"слон",r:"ладья",q:"ферзь",k:"король"};
+ const who=s.turn==="w"?"Белые":"Чёрные";
+ if(p.t==="k"&&Math.abs(sq(u.slice(0,2))-to)===2)return n+". "+who+": рокировка — король прячется, ладья выходит в игру.";
+ return n+". "+who+": "+names[p.t]+" "+u.slice(0,2)+" → "+u.slice(2,4)+(s.b[to]?" — забирает "+names[s.b[to].t]+".":".");
+}
+function replayDraw(){
+ pos=cp(replay[replayAt].pos);selected=null;locked=true;lastMove=replay[replayAt].move;draw();
+ id("posTitle").textContent="Начало партии: ход "+replayAt+" из "+(replay.length-1);
+ id("replayCaption").textContent=replay[replayAt].caption;
+ id("status").textContent="Смотрим начало партии";
+ id("replayPrev").disabled=replayAt===0;id("replayNext").disabled=replayAt===replay.length-1;
+}
+function beginReplay(){
+ replaySaved={pos:cp(pos),locked,lastMove};replayAt=0;let s=initial();
+ replay=[{pos:cp(s),move:null,caption:"Начальная позиция. Белые ходят первыми. Нажимай «Следующий ход», чтобы увидеть, как появилась наша задача."}];
+ for(const [i,u] of task[3].split(" ").filter(Boolean).entries()){
+  const caption=describeMove(s,u,i+1),m=find(s,u);s=raw(s,m);
+  replay.push({pos:cp(s),move:{from:m.f,to:m.t},caption});
+ }
+ id("replayControls").hidden=false;id("replayStart").hidden=true;replayDraw();remember(false);
+}
+function endReplay(){
+ if(!replay)return;pos=cp(replaySaved.pos);locked=replaySaved.locked;lastMove=replaySaved.lastMove;replay=null;replaySaved=null;
+ id("posTitle").textContent=task[6];id("status").textContent=locked?"Линия пройдена":"Твой ход!";
+ id("replayControls").hidden=true;id("replayStart").hidden=false;id("replayCaption").textContent="Теперь понятно, откуда взялась позиция. Продолжай за "+(task[2]==="w"?"белых.":"чёрных.");draw();remember(false);
+}
+const originalGuard=guardInput;
+guardInput=function(fn){if(replay)return;return originalGuard(fn)};
+const uiIds=["title","prompt","idea","feedback","hint","counter","lineBox","lineRecap","moves","lineStep","status","posTitle","nextBtn","hintBtn","showBtn","prevLine","nextLine","bar","sessionStats","posCount","replayCaption"];
+function snapshot(){
+ const ui={};for(const k of uiIds){const e=id(k);ui[k]={text:e.textContent,classes:e.className,disabled:e.disabled,width:e.style.width};}
+ return {trainer:true,screen:id("trainer").classList.contains("active")?"task":"home",mode,ids:queue.map(t=>t[0]),idx,side:id("side").value,opening:id("opening").value,pos,selected,locked,lastMove,session,line,lineAt,seqIndex,seqHistory,seqShown,ui,replay,replayAt,replaySaved};
+}
+function remember(push){
+ if(navigating||navDepth)return;
+ try{const s=snapshot();const url=s.screen==="home"?"#home":"#task="+encodeURIComponent(task?task[0]:"empty")+"&mode="+mode;
+ history[push?"pushState":"replaceState"](s,"",url);}catch(e){console.warn("Не удалось сохранить экран",e)}
+}
+function restore(s){
+ if(!s||!s.trainer)return;
+ navigating=true;replay=null;replaySaved=null;
+ try{
+  id("modal").classList.remove("open");
+  if(s.screen==="home"){originalHome();id("taskIntro").hidden=true;return}
+  id("side").value=s.side;id("opening").value=s.opening;originalStart(s.mode);
+  queue=s.ids.map(k=>T.find(t=>t[0]===k)).filter(Boolean);idx=s.idx;originalTask();
+  pos=s.pos;selected=s.selected;locked=s.locked;lastMove=s.lastMove;session=s.session;line=s.line;lineAt=s.lineAt;seqIndex=s.seqIndex;seqHistory=s.seqHistory;seqShown=s.seqShown;
+  intro();
+  for(const k of uiIds){const e=id(k),v=s.ui[k];if(!v)continue;if(!["lineBox","lineRecap"].includes(k))e.textContent=v.text;e.className=v.classes;e.disabled=v.disabled;e.style.width=v.width;}
+  replay=s.replay;replayAt=s.replayAt;replaySaved=s.replaySaved;
+  updateLineRecap(!!s.ui.lineRecap&&s.ui.lineRecap.classes.split(" ").includes("active"));
+  if(replay){id("replayControls").hidden=false;id("replayStart").hidden=true;replayDraw()}else if(pos)draw();
+ }finally{navigating=false}
+}
+const originalTask=showTask,originalStart=start,originalHome=home;
+showTask=function(){replay=null;replaySaved=null;originalTask();intro();remember(true)};
+start=function(m){navDepth++;try{return originalStart(m)}finally{navDepth--;remember(true)}};
+home=function(){originalHome();id("taskIntro").hidden=true;remember(true)};
+const empty=showEmptyState;showEmptyState=function(){empty();id("taskIntro").hidden=true;remember(false)};
+for(const name of ["commitSequenceMove","trySequenceMove","tryMove","reveal"]){
+ const original={commitSequenceMove,trySequenceMove,tryMove,reveal}[name];
+ const wrapped=function(...args){try{return original(...args)}finally{remember(false)}};
+ if(name==="commitSequenceMove")commitSequenceMove=wrapped;
+ if(name==="trySequenceMove")trySequenceMove=wrapped;
+ if(name==="tryMove")tryMove=wrapped;
+ if(name==="reveal")reveal=wrapped;
+}
+id("replayStart").onclick=beginReplay;
+id("replayPrev").onclick=()=>{if(replayAt>0){replayAt--;replayDraw();remember(false)}};
+id("replayNext").onclick=()=>{if(replayAt<replay.length-1){replayAt++;replayDraw();remember(false)}};
+id("replayDone").onclick=endReplay;
+for(const k of ["hintBtn","prevLine","nextLine"]){const handler=id(k).onclick;id(k).onclick=function(e){handler(e);remember(false)}}
+id("homeBtn").onclick=home;id("showBtn").onclick=reveal;
+window.addEventListener("popstate",e=>restore(e.state));
+id("taskIntro").hidden=true;
+if(history.state&&history.state.trainer)restore(history.state);else remember(false);
+})();
+
 </script></body></html>
